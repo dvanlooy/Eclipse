@@ -15,7 +15,7 @@ import be.vdab.entities.Gemeente;
 /**
  * Servlet implementation class IndexServlet
  */
-@WebServlet("/index.htm")
+@WebServlet(urlPatterns = "/index.htm", name = "indexservlet")
 public class IndexServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String VIEW = "/WEB-INF/JSP/index.jsp";
@@ -27,6 +27,7 @@ public class IndexServlet extends HttpServlet {
 		int dagVanDeWeek = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
 		request.setAttribute("openGesloten",
 				dagVanDeWeek == Calendar.MONDAY || dagVanDeWeek == Calendar.THURSDAY ? "gesloten" : "open");
+		request.setAttribute("phonenumberHelpdesk", this.getInitParameter("phonenumberHelpdesk"));
 		request.getRequestDispatcher(VIEW).forward(request, response);
 	}
 

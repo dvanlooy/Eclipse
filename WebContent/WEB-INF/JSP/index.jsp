@@ -17,6 +17,6 @@
 	<h2>Adres</h2>
 	${adres.straat} ${adres.huisNr}
 	<br> ${adres.gemeente.postCode} ${adres.gemeente.naam}
-
+<div>Helpdesk:${phonenumberHelpdesk}</div>
 </body>
 </html>
