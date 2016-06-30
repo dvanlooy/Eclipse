@@ -27,7 +27,7 @@ public class IndexServlet extends HttpServlet {
 		int dagVanDeWeek = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
 		request.setAttribute("openGesloten",
 				dagVanDeWeek == Calendar.MONDAY || dagVanDeWeek == Calendar.THURSDAY ? "gesloten" : "open");
-		request.setAttribute("phonenumberHelpdesk", this.getInitParameter("phonenumberHelpdesk"));
+		request.setAttribute("phonenumberHelpdesk", this.getServletContext().getInitParameter("phonenumberHelpdesk"));
 		request.getRequestDispatcher(VIEW).forward(request, response);
 	}
 
