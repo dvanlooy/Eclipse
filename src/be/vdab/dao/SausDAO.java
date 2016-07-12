@@ -25,5 +25,17 @@ public class SausDAO {
 	public List<Saus> findAll() {
 		return new ArrayList<>(SAUZEN.values());
 	}
-	
+
+	public List<Saus> findSauzen(String ingredient) {
+		List<Saus> sauzen = new ArrayList<>();
+		for (Saus saus : SAUZEN.values()) {
+			for (String sausIngredient : saus.getIngredienten()) {
+				if (sausIngredient.equalsIgnoreCase(ingredient)) {
+					sauzen.add(saus);
+				}
+			}
+		}
+		return sauzen;
+	}
+
 }
