@@ -3,15 +3,19 @@ body {
 	color: #3F001B;
 	font-family: sans-serif;
 }
+
 h1 {
 	color: #24000F;
 }
+
 img {
 	width: 20%;
 }
-.sausjes{
+
+.sausjes {
 	max-width: 50px;
 }
+
 label span, .fout {
 	background-color: red;
 	border-bottom-right-radius: 0.5em;
@@ -22,6 +26,38 @@ label span, .fout {
 	padding: 0.5em;
 	color: white;
 }
+
 label span:empty, .fout:empty {
 	display: none;
+}
+
+nav ul {
+	background-color: #A83E3E;
+	padding: 0.4em 0;
+}
+
+nav li {
+	display: inline;
+}
+
+nav li a {
+	color: white;
+	font-weight: bold;
+	padding-left: 0.5em;
+	text-decoration: none;
+	vertical-align: middle;
+}
+
+nav li a:hover {
+	color: #F7FFCC;
+}
+
+.meisjes {
+	background-color: #FFCCFF;
+	color: #FF0066;
+}
+
+.jongens {
+	background-color: #CCFFFF;
+	color:
 }
