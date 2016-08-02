@@ -11,4 +11,6 @@
 <li><a href="<c:url value='/'/>">Welkom</a></li>
 <li><a href="<c:url value='/sauzen.htm'/>">Sausjes</a></li>
 <li><a href="<c:url value='/meisjesjongens.htm'/>">Meisje/Jongen</a></li>
+<li><a href="<c:url value='/zoekdefriet.htm'/>">Zoek de friet</a></li>
+<li><a href="<c:url value='/sausraden.htm'/>">Raad de saus</a></li>
 </ul></nav>

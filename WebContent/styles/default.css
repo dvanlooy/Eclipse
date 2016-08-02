@@ -8,6 +8,10 @@ h1 {
 	color: #24000F;
 }
 
+form img {
+	width: 100%;
+}
+
 img {
 	width: 20%;
 }
