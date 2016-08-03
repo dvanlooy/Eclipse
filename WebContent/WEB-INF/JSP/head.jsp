@@ -13,4 +13,5 @@
 <li><a href="<c:url value='/meisjesjongens.htm'/>">Meisje/Jongen</a></li>
 <li><a href="<c:url value='/zoekdefriet.htm'/>">Zoek de friet</a></li>
 <li><a href="<c:url value='/sausraden.htm'/>">Raad de saus</a></li>
+<li><a href="<c:url value='/statistiek.htm'/>">Statistiek</a></li>
 </ul></nav>
