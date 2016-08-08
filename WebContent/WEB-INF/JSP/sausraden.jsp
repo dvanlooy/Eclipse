@@ -1,15 +1,15 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%-- Op de vorige regel wordt session="false" niet vermeld --%>
-<%-- Zo komt session="true" (de default) --%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!doctype html>
-<html lang="nl">
+<%@page contentType='text/html' pageEncoding='UTF-8'%>
+<%@taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core'%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-<c:import url="head.jsp">
-	<c:param name='title' value='Saus raden' />
+<c:import url='/WEB-INF/JSP/head.jsp'>
+	<c:param name='title' value='Frituur Frida: raad de saus' />
 </c:import>
 </head>
-<body>
+<body class="${cookie.meisjesjongens.value}">
+<h1>&#9733; FRITUUR FRIDA &#9733;</h1>
+<c:import url='/WEB-INF/JSP/menu.jsp'/>
 	<h1>Saus raden</h1>
 	<c:choose>
 		<c:when test="${sausRaden.verloren}">

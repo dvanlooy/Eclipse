@@ -4,8 +4,12 @@
 <html>
 <head>
 <c:import url='/WEB-INF/JSP/head.jsp'>
-	<c:param name='title' value='Frituur Frida' />
+	<c:param name='title' value='Frituur Frida: Sauzen' />
 </c:import>
+</head>
+<body class="${cookie.meisjesjongens.value}">
+<h1>&#9733; FRITUUR FRIDA &#9733;</h1>
+<c:import url='/WEB-INF/JSP/menu.jsp'/>
 
 	<h1>&#9733; zoek sauzen: &#9733;</h1>
 	<form>

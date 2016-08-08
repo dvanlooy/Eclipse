@@ -10,7 +10,7 @@ public class SausRaden implements Serializable {
 	private int verkeerdeBeurten;
 
 	public SausRaden(String saus) {
-		this.saus = saus;
+		this.saus = saus.toLowerCase();
 		sausMetPuntjes = new StringBuilder(saus.length());
 		for (int teller = 0; teller != saus.length(); teller++) {
 			sausMetPuntjes.append('.');
