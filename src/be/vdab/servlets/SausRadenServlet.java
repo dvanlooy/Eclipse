@@ -5,12 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import javax.annotation.Resource;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.sql.DataSource;
 
 import be.vdab.dao.SausDAO;
 import be.vdab.entities.Saus;
@@ -21,7 +23,12 @@ public class SausRadenServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String VIEW = "/WEB-INF/JSP/sausraden.jsp";
 	private static final String SPEL = "sausRaden";
-	private final SausDAO sausDAO = new SausDAO();
+	private transient final SausDAO sausDAO = new SausDAO();
+
+	@Resource(name = SausDAO.JNDI_NAME)
+	public void setDataSource(DataSource dataSource) {
+		sausDAO.setDataSource(dataSource);
+	}
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)

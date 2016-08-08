@@ -3,22 +3,31 @@ package be.vdab.servlets;
 import java.io.IOException;
 import java.util.Collections;
 
+import javax.annotation.Resource;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.sql.DataSource;
 
 import be.vdab.dao.SausDAO;
 
 /**
  * Servlet implementation class SauzenServlet
  */
+
 @WebServlet("/sauzen.htm")
+
 public class SauzenServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private final SausDAO sausDAO = new SausDAO();
+	private transient final SausDAO sausDAO = new SausDAO();
 	private static final String VIEW = "/WEB-INF/JSP/sauzen.jsp";
+
+	@Resource(name = SausDAO.JNDI_NAME)
+	public void setDataSource(DataSource dataSource) {
+		sausDAO.setDataSource(dataSource);
+	} 
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -41,7 +50,7 @@ public class SauzenServlet extends HttpServlet {
 			if (ingredient.isEmpty()) {
 				request.setAttribute("fouten", Collections.singletonMap("ingredient", "verplicht"));
 			} else {
-				request.setAttribute("querySauzen", sausDAO.findSauzen(ingredient));
+				request.setAttribute("querySauzen", sausDAO.findByIngredient(ingredient));
 			}
 		}
 		request.getRequestDispatcher(VIEW).forward(request, response);
