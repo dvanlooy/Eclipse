@@ -21,8 +21,7 @@ U bent gewonnen, de saus was ${sausRaden.saus}.
 		<c:otherwise>
 Te raden saus: ${sausRaden.sausMetPuntjes}
 <form method="post" id="radenform">
-				<label>letter: <input name="letter" size="1" maxlength="1"
-					autofocus required>
+				<label>letter: <input name="letter" size="1" maxlength="1" autofocus required>
 				</label> <input type="submit" value="Raden" id="radenknop">
 			</form>
 			<script>
