@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import be.vdab.entities.Saus;
 
@@ -51,8 +53,11 @@ public class SausDAO extends AbstractDAO {
 			+ " from sauzen inner join sauzeningredienten " + " on sauzen.id=sauzeningredienten.sausid"
 			+ " inner join ingredienten" + " on sauzeningredienten.ingredientid=ingredienten.id"
 			+ " where ingredienten.naam = ?" + " order by sauzen.naam";
+//	private static final String CREATE_SQL = "insert into sauzen(naam) values (?)";
+//	private static final String SET_INGREDIENT_SQL = "insert into sauzeningredienten(sausid, ingredientid) values (?,?)";
 	private static final String DELETE_SQL = "delete from sauzen where id=?";
-
+//	private final static Logger logger = Logger.getLogger(SausDAO.class.getName());
+	
 	public List<Saus> findAll() {
 		try (Connection connection = dataSource.getConnection();
 				Statement statement = connection.createStatement();
@@ -101,4 +106,5 @@ public class SausDAO extends AbstractDAO {
 			throw new DAOException(ex);
 		}
 	}
+
 }
